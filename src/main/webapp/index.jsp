@@ -13,7 +13,7 @@
 <body>
     <form action="/payment/test" method="post">
         输入要购买的课程:<input type="text" name="name">
-        <input type="submit" value="购买" />service.ddd
-    </form
+        <input type="submit" value="购买" />
+    </form>
 </body>
 </html>

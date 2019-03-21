@@ -15,6 +15,7 @@ import me.chanjar.weixin.mp.api.WxMpMenuService;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.menu.WxMpGetSelfMenuInfoResult;
 import me.chanjar.weixin.mp.bean.menu.WxMpMenu;
+import org.springframework.web.servlet.ModelAndView;
 
 import static me.chanjar.weixin.common.api.WxConsts.MenuButtonType;
 
@@ -27,12 +28,17 @@ import static me.chanjar.weixin.common.api.WxConsts.MenuButtonType;
  * @author Binary Wang(https://github.com/binarywang)
  */
 @RestController
-@RequestMapping("/createmenu")
+@RequestMapping("/createmenu ")
 public class WxMenuController implements WxMpMenuService {
   @Autowired
   private WxMpService wxService;
 
-  /**
+  /**{
+   return this.wxService.getMenuService().menuCreate(menu);
+   }
+
+   @GetMapping("/create")
+   public
    * <pre>
    * 自定义菜单创建接口
    * 详情请见：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141013&token=&lang=zh_CN
@@ -196,6 +202,12 @@ public class WxMenuController implements WxMpMenuService {
   @GetMapping("/get")
   public WxMpMenu menuGet() throws WxErrorException {
     return this.wxService.getMenuService().menuGet();
+  }
+
+  @GetMapping("/test")
+  public ModelAndView test(){
+    ModelAndView mv = new ModelAndView("login");
+    return mv;
   }
 
   /**
