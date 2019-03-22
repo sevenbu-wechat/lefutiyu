@@ -1,8 +1,6 @@
 package com.lefutiyu.sevenbu.mp.spring;
 
 import com.lefutiyu.sevenbu.mp.builder.MenuBuilder;
-import com.lefutiyu.sevenbu.mp.common.ApplicationContextUtil;
-import com.lefutiyu.sevenbu.mp.controller.WxMenuController;
 import me.chanjar.weixin.common.bean.menu.WxMenu;
 import me.chanjar.weixin.mp.api.WxMpService;
 import org.slf4j.Logger;
