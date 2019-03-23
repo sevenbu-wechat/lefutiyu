@@ -24,14 +24,11 @@ public class SpringListener implements ApplicationListener<ContextRefreshedEvent
 
             WxMenu wxMenu = MenuBuilder.buildMenu();
 
-            if(wxService == null){
-                logger.error("------------------nullll");
-                wxService.getMenuService().menuCreate(wxMenu);
-            }
-            //String menuId = wxMenuController.menuCreateSample();
-            logger.error("------------------finish");
+            String menuId = wxService.getMenuService().menuCreate(wxMenu);
+
+            logger.info(String.format("===================>SpringListener.onApplicationEvent, menuId: [%s]", menuId));
         }catch (Exception e){
-            logger.error("------------------exception", e);
+            logger.error("===================>SpringListener.onApplicationEvent fail", e);
         }
     }
 

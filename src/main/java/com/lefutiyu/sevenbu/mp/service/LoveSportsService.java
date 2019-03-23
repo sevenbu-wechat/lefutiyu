@@ -14,6 +14,10 @@ public class LoveSportsService {
     private SignUpUserDAO signUpUserDAO;
 
     public void signUpUserInfo(SignUpUserDTO signUpUserDTO){
-        int count = signUpUserDAO.insert(signUpUserDTO);
+        try{
+            int id = signUpUserDAO.insert(signUpUserDTO);
+        }catch (Exception e){
+
+        }
     }
 }
