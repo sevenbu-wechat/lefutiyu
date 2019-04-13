@@ -17,12 +17,24 @@ public class SignUpUserDTO {
     private String channel;
     private String remark;
 
+    private String schedule;
+
+
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(String schedule) {
+        this.schedule = schedule;
     }
 
     public String getUserName() {

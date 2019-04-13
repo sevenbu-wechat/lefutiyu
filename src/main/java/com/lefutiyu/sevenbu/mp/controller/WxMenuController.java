@@ -119,7 +119,7 @@ public class WxMenuController implements WxMpMenuService {
 
   @GetMapping("/test")
   public ModelAndView test(){
-    ModelAndView mv = new ModelAndView("login");
+    ModelAndView mv = new ModelAndView("lovesportsH5/view");
     return mv;
   }
 

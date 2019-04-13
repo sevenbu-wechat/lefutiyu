@@ -11,20 +11,21 @@
 		<meta property="og:description" content='为学员报名-勒夫体育提交数据。①提交后，课程老师将在1个工作日内与您联系，为您安排免费体验课！ ②咨询电话：400-184...'>
 		<meta property="og:image" content='img/log2.png@wtinormal'>
 
-		<link rel="shortcut icon" type="image/x-icon" href="img/lovesports-icon.png" />
-		<link rel="stylesheet" media="screen" href="css/assets/published.css" debug="false" />
+		<link rel="shortcut icon" type="image/x-icon" href="../img/lovesports-icon.png" />
+		<link rel="stylesheet" media="screen" href="../css/assets/published.css" debug="false" />
 
 		<script>
 			(function () {
     var js;
     if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
-      js = 'js/assets/jquery/jquery.js'
+      js = '../js/assets/jquery/jquery.js'
     } else {
-      js = 'js/assets/jquery/jquery-1.11.3.js';
+      js = '../js/assets/jquery/jquery-1.11.3.js';
     }
     document.write('<script src="' + js + '"><\/script>');
   }());
 	</script>
+		<script type="text/javascript" src="../js/login.js"></script>
 
 
 
@@ -32,7 +33,7 @@
 
 		</style>
 
-		<script src="js/assets/published_forms/application.js" debug="false"></script>
+		<script src="../js/assets/published_forms/application.js" debug="false"></script>
 
 
 		<meta name="csrf-param" content="authenticity_token" />
@@ -43,7 +44,7 @@
 			<style type="text/css">
 				.entry-container {
 					background-color: #FFF;
-					background-image: url(img/bg_1.png);
+					background-image: url(../img/bg_1.png);
 					background-position: top center;
 					background-attachment: fixed;
 					background-repeat: repeat;
@@ -52,7 +53,7 @@
 				@media screen and (min-width: 769px) and (max-width: 1440px) {
 					.entry-container {
 						background-color: #FFF;
-						background-image: url(img/bg_1.png);
+						background-image: url(../img/bg_1.png);
 						background-position: top center;
 						background-attachment: fixed;
 						background-repeat: repeat;
@@ -62,7 +63,7 @@
 				@media screen and (min-width: 481px) and (max-width: 768px) {
 					.entry-container {
 						background-color: #FFF;
-						background-image: url(img/bg_1.png);
+						background-image: url(../img/bg_1.png);
 						background-position: top center;
 						background-attachment: fixed;
 						background-repeat: repeat;
@@ -72,7 +73,7 @@
 				@media screen and (max-width: 480px) {
 					.entry-container {
 						background-color: #FFF;
-						background-image: url(img/bg_1.png);
+						background-image: url(../img/bg_1.png);
 						background-position: top center;
 						background-attachment: fixed;
 						background-repeat: repeat;
@@ -85,7 +86,7 @@
 					.entry-container::after {
 						content: '';
 						display: block;
-						background-image: url(img/bg_1.png);
+						background-image: url(../img/bg_1.png);
 						background-position: center top;
 						background-repeat: repeat;
 						position: fixed;
@@ -181,7 +182,7 @@
 					<div class="banner font-family-inherit header-type-image">
 						<div class="banner-img">
 							<!-- <img data-img-url="img/lovesports_head_1.png" data-img-prefix="hi" class="header-image need-adapt-retina" src="" /> -->
-							<img data-img-url=src data-img-prefix="" class="header-image need-adapt-retina" src="img/lovesports_head_1.png" />
+							<img data-img-url=src data-img-prefix="" class="header-image" src="../img/lovesports_head_1.png" />
 						</div>
 					</div>
 
@@ -566,7 +567,7 @@
 							<a class="pagination-action previous-page hide gd-btn gd-btn-primary-solid font-family-inherit with-shadow" href="javascript:void(0)">上一页</a>
 							<a class="pagination-action next-page hide gd-btn gd-btn-primary-solid font-family-inherit with-shadow" href="javascript:void(0)">下一页</a>
 
-							<input type="submit" name="commit" value="提交" data-disabled-with="提交中..." class="submit gd-btn gd-btn-primary-solid  font-family-inherit with-shadow" />
+							<input type="submit" name="commit" id="loginSubmit" value="提交" data-disabled-with="提交中..." class="submit gd-btn gd-btn-primary-solid  font-family-inherit with-shadow" />
 							<span class="page-number text-muted"></span>
 							<a target="_blank" class="report-form-link gd-form-control-line-height" href="/lovesportsH5/tip.html">举报</a>
 							<input type="hidden" name="embedded" id="embedded" />

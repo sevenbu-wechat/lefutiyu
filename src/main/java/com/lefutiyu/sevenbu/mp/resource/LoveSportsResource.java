@@ -28,7 +28,11 @@ public class LoveSportsResource {
     @PostMapping("/signUp")
     public String signUp(@RequestBody SignUpUserDTO signUpUserDTO){
         logger.error("test.....");
-        loveSportsService.signUpUserInfo(signUpUserDTO);
+        try {
+            loveSportsService.signUpUserInfo(signUpUserDTO);
+        }catch (Exception e){
+            return "false";
+        }
         return "success";
     }
 
