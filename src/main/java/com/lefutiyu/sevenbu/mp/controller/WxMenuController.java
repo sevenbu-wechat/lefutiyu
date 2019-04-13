@@ -29,7 +29,7 @@ import static me.chanjar.weixin.common.api.WxConsts.MenuButtonType;
  * @author Binary Wang(https://github.com/binarywang)
  */
 @RestController
-@RequestMapping("/createmenu ")
+@RequestMapping("/createmenu")
 public class WxMenuController implements WxMpMenuService {
   @Autowired
   private WxMpService wxService;
@@ -117,7 +117,7 @@ public class WxMenuController implements WxMpMenuService {
     return this.wxService.getMenuService().menuGet();
   }
 
-  @GetMapping("/test")
+  @GetMapping("/login")
   public ModelAndView test(){
     ModelAndView mv = new ModelAndView("lovesportsH5/view");
     return mv;

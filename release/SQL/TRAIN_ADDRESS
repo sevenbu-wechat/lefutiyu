@@ -1,0 +1,14 @@
+use loveSports;
+show variables like 'character_set_database';
+alter database loveSports character set utf8;
+create table TRAIN_ADDRESS(
+id int auto_increment PRIMARY KEY  COMMENT '设置主键自增',
+created_at TIMESTAMP NOT NULL DEFAULT NOW() COMMENT '创建时间',
+created_by varchar(32) NOT NULL DEFAULT 'SYS' COMMENT '创建人',
+updated_at TIMESTAMP NOT NULL DEFAULT NOW() COMMENT '更新时间',
+updated_by varchar(32) NOT NULL DEFAULT 'SYS' COMMENT '更新人',
+version bigint NOT NULL default 0 COMMENT '乐观锁',
+is_valid varchar(1) not null default '1' COMMENT '删除位',
+address varchar(256) NOT NULL COMMENT '训练基地',
+train_base_code varchar(32) NOT NULL COMMENT '训练基地代码'
+)COMMENT '报名信息表';

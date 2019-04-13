@@ -3,5 +3,6 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="SignUpUserDTO" type="com.lefutiyu.sevenbu.mp.dto.SignUpUserDTO"/>
+        <typeAlias alias="TrainAddressScheduleDTO" type="com.lefutiyu.sevenbu.mp.dto.TrainAddressScheduleDTO"/>
     </typeAliases>
 </configuration>

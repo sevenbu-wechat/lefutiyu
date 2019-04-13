@@ -1,14 +1,7 @@
-#数据库建表
 
-#查看数据库引擎
-show variables like '%storage_engine%';
-#查看数据库隔离级别
-SELECT @@tx_isolation;
-show databases;
-#创建数据库
+drop database lovesports;
 CREATE DATABASE IF NOT EXISTS loveSports;
 #创建报名信息表
-drop database lovesports;
 use loveSports;
 show variables like 'character_set_database';
 alter database loveSports character set utf8;
@@ -21,20 +14,10 @@ updated_by varchar(32) NOT NULL DEFAULT 'SYS' COMMENT '更新人',
 version bigint NOT NULL default 0 COMMENT '乐观锁',
 is_valid varchar(1) not null default '1' COMMENT '删除位',
 user_name varchar(128) NOT NULL COMMENT '用户姓名',
-train_base varchar(32) NOT NULL COMMENT '训练基地',
-week_day varchar(1) not null COMMENT '星期日期',
-time_schedule varchar(128) not null COMMENT '时间段',
+train_base_schedule_id int NOT NULL COMMENT '训练基地时间表id',
 age int not null COMMENT '年龄',
 height int not null COMMENT '身高',
 mobile varchar(32) not null COMMENT '手机号码',
-channel varchar(4) not null COMMENT '了解渠道',
+channel varchar(32) not null COMMENT '了解渠道',
 remark varchar(1024) COMMENT '家长留言'
 )COMMENT '报名信息表';
-
-
-insert into SIGN_UP_USER(user_name, train_base, week_day, time_schedule, age, height, mobile, channel, remark)
-values('渠国庆','1', '2', '16:30-18:00', 23, 200, '18717822375', '1', 'test');
-SET SQL_SAFE_UPDATES=0;
-delete from SIGN_UP_USER;
-select * from SIGN_UP_USER;
-drop table sign_up_user;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TRAIN_ADDRESS_SCHEDULE">
+    <select id="getScheduleByBaseCode" parameterType="java.util.Map" resultType="TrainAddressScheduleDTO">
+        select id,address,train_base_code as trainBaseCode,time_schedule as timeSchedule,time_schedule_code as timeScheduleCode
+        from TRAIN_ADDRESS_SCHEDULE
+        where
+        train_base_code = #{trainBaseCode}
+    </select>
+
+    <select id="getScheduleByBaseCodeAndShceduleCode" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select id from TRAIN_ADDRESS_SCHEDULE
+        where
+        train_base_code = #{trainBaseCode}
+        and
+        time_schedule_code = #{timeScheduleCode}
+    </select>
+</mapper>

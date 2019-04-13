@@ -6,20 +6,31 @@ package com.lefutiyu.sevenbu.mp.dto;
 public class SignUpUserDTO {
     private Integer id;
     private String userName;
-    private String trainBase;
-    /** 1:周一，2：周二...*/
-    private String weekDay;
-    //时间段：16:30-18:00
-    private String timeSchedule;
     private int age;
     private int height;
     private String mobile;
     private String channel;
     private String remark;
+    private Integer trainBaseScheduleId;
 
-    private String schedule;
+    private String trainBaseCode;
+    private Integer timeScheduleCode;
 
+    public String getTrainBaseCode() {
+        return trainBaseCode;
+    }
 
+    public void setTrainBaseCode(String trainBaseCode) {
+        this.trainBaseCode = trainBaseCode;
+    }
+
+    public Integer getTimeScheduleCode() {
+        return timeScheduleCode;
+    }
+
+    public void setTimeScheduleCode(Integer timeScheduleCode) {
+        this.timeScheduleCode = timeScheduleCode;
+    }
 
     public Integer getId() {
         return id;
@@ -27,14 +38,6 @@ public class SignUpUserDTO {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getSchedule() {
-        return schedule;
-    }
-
-    public void setSchedule(String schedule) {
-        this.schedule = schedule;
     }
 
     public String getUserName() {
@@ -45,28 +48,12 @@ public class SignUpUserDTO {
         this.userName = userName;
     }
 
-    public String getTrainBase() {
-        return trainBase;
+    public Integer getTrainBaseScheduleId() {
+        return trainBaseScheduleId;
     }
 
-    public void setTrainBase(String trainBase) {
-        this.trainBase = trainBase;
-    }
-
-    public String getWeekDay() {
-        return weekDay;
-    }
-
-    public void setWeekDay(String weekDay) {
-        this.weekDay = weekDay;
-    }
-
-    public String getTimeSchedule() {
-        return timeSchedule;
-    }
-
-    public void setTimeSchedule(String timeSchedule) {
-        this.timeSchedule = timeSchedule;
+    public void setTrainBaseScheduleId(Integer trainBaseScheduleId) {
+        this.trainBaseScheduleId = trainBaseScheduleId;
     }
 
     public int getAge() {

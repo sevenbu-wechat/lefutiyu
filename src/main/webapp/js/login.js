@@ -1,5 +1,38 @@
 $(function(){
 
+    $("#studentLocate").change(function(){
+        var studentLocate = $("#studentLocate").val();
+        if(studentLocate){
+            var url = "../customer/getShcedule";
+
+            var param = {};
+            param.trainBaseCode = studentLocate;
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(param),
+                success: function(data) {
+                    var dataJson = eval("("+data+")");
+                    if(dataJson.resultCode == '00'){
+                        var res = dataJson.data;
+                        for(var i=0; i < res.length; i++){
+                            var schedule = res[i];
+                            $("#studentTime").append("<option value='"+ schedule.timeScheduleCode+"'>"+schedule.timeSchedule+"</option>");
+                        }
+                    }
+                }
+            })
+
+        }else {
+
+        }
+
+    }); //为Select添加事件，当选择其中一项时触发
+
+
     $('#loginSubmit').click(function () {
         var studentName = $('#studentName').val().trim();
         var studentTime = $('#studentTime').val();
@@ -12,14 +45,9 @@ $(function(){
         var originFrom = $("input[name='originFrom']:checked").val();
 
         var studentLocate = $("#studentLocate").val();
+        var studentTime = $("#studentTime").val();
 
-
-
-        // $("#select_id").change(function(){//code...}); //为Select添加事件，当选择其中一项时触发
-        //
-        // })
-
-        if(!studentName || !studentTime || !studentHeight || !phoneNum || !originFrom || !studentLocate){
+        if(!studentName || !studentTime || !studentHeight || !phoneNum || !originFrom || !studentLocate ||!studentTime){
             alert("请完整填写报名信息！")
             return;
         }
@@ -48,8 +76,8 @@ $(function(){
 
         var param = {};
         param.userName = studentName;
-        param.trainBase = studentLocate;
-        param.schedule = studentTime;
+        param.trainBaseCode = studentLocate;
+        param.timeScheduleCode = studentTime
         param.mobile = phoneNum;
         param.age = studentAge;
         param.height = studentHeight;
@@ -57,13 +85,19 @@ $(function(){
         param.remark = parentsMessage;
 
         $.ajax({
-            url: '../customer/signUp',
+            url: url,
             type: 'POST',
             dataType: 'json',
             contentType: 'application/json',
             data: JSON.stringify(param),
             success: function(data) {
-                alert("success")
+                var dataJson = eval("("+data+")");
+
+                if(dataJson.resultCode == '00'){
+                    window.location.href = '../success.html';
+                }else {
+                    window.location.href = '../fail.html';
+                }
             }
         })
 
